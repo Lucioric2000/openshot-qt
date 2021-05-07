@@ -39,7 +39,9 @@ from operator import itemgetter
 import openshot  # Python module for libopenshot (required video editing module installed separately)
 from PyQt5.QtCore import QFileInfo, pyqtSlot, QUrl, Qt, QCoreApplication, QTimer
 from PyQt5.QtGui import QCursor, QKeySequence
-from PyQt5.QtWebKitWidgets import QWebView
+#from PyQt5.QtWebKitWidgets import QWebView
+from PyQt5.QtWebEngineWidgets import QWebEngineView as QWebView#,QWebEnginePage as QWebPage
+
 from PyQt5.QtWidgets import QMenu
 
 from classes import info, updates
@@ -2954,7 +2956,8 @@ class TimelineWebView(QWebView, updates.UpdateInterface):
         self.setAttribute(Qt.WA_DeleteOnClose)
 
         # Disable image caching on timeline
-        self.settings().setObjectCacheCapacities(0, 0, 0)
+        print("ds", self.settings().globalSettings, dir(self.page()))
+        #self.settings().setObjectCacheCapacities(0, 0, 0)
 
         # Get settings
         self.settings_obj = settings.get_settings()

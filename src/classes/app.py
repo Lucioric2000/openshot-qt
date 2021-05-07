@@ -38,6 +38,7 @@ from PyQt5.QtCore import QT_VERSION_STR
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPalette, QColor, QFontDatabase, QFont
 from PyQt5.QtWidgets import QApplication, QStyleFactory, QMessageBox
+from PyQt5.QtWebEngineWidgets import QWebEngineView as QWebView#,QWebEnginePage as QWebPage
 
 try:
     # Enable High-DPI resolutions
